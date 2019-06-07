@@ -3,9 +3,11 @@ import $ from 'jquery';
 
 $(document).ready(function() {
 
-  $("form").click(function(event) {
+  $("#symptomForm").click(function(event) {
     event.preventDefault();
-
+    let symptom = $('#symptom').val();
+    $('#symptom').val("");
+    
     let doctorSearch = new DoctorSearch();
     let promise = doctorSearch.getDoctorListBySymptom(symptom);
 
