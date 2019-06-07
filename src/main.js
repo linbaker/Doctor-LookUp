@@ -1,4 +1,5 @@
 import { DoctorSearch } from "./doctor-search.js";
+import $ from 'jquery';
 
 $(document).ready(function() {
   $("form").on("submit", function(event) {
@@ -7,14 +8,14 @@ $(document).ready(function() {
     $("#symptom").val("");
 
     let doctorSearch = new DoctorSearch();
-    let promise = doctorSearch.getDoctorListBySymptom(city);
+    let promise = doctorSearch.getDoctorListBySymptom(symptom);
 
     promise.then(function(response) {
 
-      let body = JSON.parse(response);
-      body.data.foreACH
-      $('.showHumidity').text(`The humidity in ${city} is ${body.main.humidity}%`);
-      $('.showTemp').text(`The temperature in Kelvins is ${body.main.temp} degrees`);
+    let body = JSON.parse(response);
+    body.data.forEach(function())
+
+
 
     }, function(error) {
       $('.showErrors').text('There was an error processing your request: ${error.message}');
