@@ -7,7 +7,7 @@ $(document).ready(function() {
     event.preventDefault();
     let symptom = $('#symptom').val();
     $('#symptom').val("");
-    
+
     let doctorSearch = new DoctorSearch();
     let promise = doctorSearch.getDoctorListBySymptom(symptom);
 
