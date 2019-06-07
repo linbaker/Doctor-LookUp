@@ -3,7 +3,7 @@ import $ from 'jquery';
 
 $(document).ready(function() {
 
-  $("#symptomForm").click(function(event) {
+  $("#searchSymptom").click(function(event) {
     event.preventDefault();
     let symptom = $('#symptom').val();
     $('#symptom').val("");
@@ -14,7 +14,9 @@ $(document).ready(function() {
     promise.then(function(response) {
       let body = JSON.parse(response);
       body.data.forEach(function(doctor){
+        console.log(`${doctor.profile.first_name}`);
         $(".listDoctors").append(
+
           `<li>${doctor.profile.first_name} ${doctor.profile.last_name}</li>`
           );
       })
