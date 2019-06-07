@@ -8,7 +8,8 @@ https://github.com/linbaker/Doctor-LookUp.git
 
 ## Description
 
-_This application will allow a user to search for a doctor in Portland. User will be able to enter a medical issue and receive a list of doctors in Portland that fit that search. User will also be able to enter a name, first or last to receive a list of doctors matching that name. When doctors are returned in a list, the doctor's full name, location, phone number, and whether or not they are accepting new patients will be displayed for each doctor. When no doctors fit the criteria of the search, a message of "No doctors fit your search, please try another search" will display._
+_This application will allow a user to search for a doctor in Portland. User will be able to enter a medical issue and receive a list of doctors in Portland that fit that search. User will also be able to enter a name, first or last to receive a list of doctors matching that name. When doctors are returned in a list, the doctor's full name, location, phone number, and whether or not they are accepting new patients will be displayed for each doctor. When no doctors fit the criteria of the search, a message of "No doctors fit your search, please try another search" will display.
+The scope of this app is limited to 100 miles of Portland,OR as defined by the coordinates 45.5155° N, 122.6793° W._
 
 
 |Behavior|Input|Output|
