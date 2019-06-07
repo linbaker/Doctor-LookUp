@@ -20,7 +20,14 @@ $(document).ready(function() {
       }
       body.data.forEach(function(doctor) {
         console.log(`${doctor.profile.first_name}`);
-        $(".listDoctors").append(`<li>${doctor.profile.first_name} ${doctor.profile.last_name}</li>`);
+        $(".listDoctorsName").append(
+          `<li>Dr. ${doctor.profile.first_name} ${doctor.profile.last_name}</li>
+          <ul>
+            <li>Accepting New Patients:${body.data.practices.accepts_new_patients}</li>
+            <li>Website:${body.data.practices.website}</li>
+            <li>Address:${body.data.practices.visit_address.street} ${body.data.practices.visit_address.street2}<br>${body.data.practices.visit_address.city}, ${body.data.practices.visit_address.state}${body.data.practices.visit_address.zip}</li>
+            <li>Phone:${body.data.practices.phone.number}</li>
+            </ul>`);
       })
     }, function(error) {
       $('.showErrors').text('There was an error processing your request: ${error.message}');
@@ -42,7 +49,14 @@ $(document).ready(function() {
       }
       body.data.forEach(function(doctor) {
         console.log(`${doctor.profile.first_name}`);
-        $(".listDoctorsName").append(`<li>${doctor.profile.first_name} ${doctor.profile.last_name}</li>`);
+        $(".listDoctorsName").append(
+          `<li>Dr. ${doctor.profile.first_name} ${doctor.profile.last_name}</li>
+          <ul>
+            <li>Accepting New Patients:${body.data.practices.accepts_new_patients}</li>
+            <li>Website:${body.data.practices.website}</li>
+            <li>Address:${body.data.practices.visit_address.street} ${body.data.practices.visit_address.street2}<br>${body.data.practices.visit_address.city}, ${body.data.practices.visit_address.state}${body.data.practices.visit_address.zip}</li>
+            <li>Phone:${body.data.practices.phone.number}</li>
+            </ul>`);
       })
     }, function(error) {
       $('.showErrors').text('There was an error processing your request: ${error.message}');
