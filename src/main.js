@@ -15,12 +15,12 @@ $(document).ready(function() {
 
     promise.then(function(response) {
       let body = JSON.parse(response);
+      if(body.data.length === 0){
+        $(".listDoctors").append(`<li>No doctor's match your search</li>`);
+      }
       body.data.forEach(function(doctor) {
         console.log(`${doctor.profile.first_name}`);
-        $(".listDoctors").append(
-
-          `<li>${doctor.profile.first_name} ${doctor.profile.last_name}</li>`
-        );
+        $(".listDoctors").append(`<li>${doctor.profile.first_name} ${doctor.profile.last_name}</li>`);
       })
     }, function(error) {
       $('.showErrors').text('There was an error processing your request: ${error.message}');
@@ -37,12 +37,12 @@ $(document).ready(function() {
 
     promise.then(function(response) {
       let body = JSON.parse(response);
+      if(body.data.length === 0){
+        $(".listDoctorsName").append(`<li>No doctor's match your search</li>`);
+      }
       body.data.forEach(function(doctor) {
         console.log(`${doctor.profile.first_name}`);
-        $(".listDoctors").append(
-
-          `<li>${doctor.profile.first_name} ${doctor.profile.last_name}</li>`
-        );
+        $(".listDoctorsName").append(`<li>${doctor.profile.first_name} ${doctor.profile.last_name}</li>`);
       })
     }, function(error) {
       $('.showErrors').text('There was an error processing your request: ${error.message}');
