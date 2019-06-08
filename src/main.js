@@ -27,6 +27,7 @@ $(document).ready(function() {
               <li>Accepting New Patients:${practice.accepts_new_patients}</li>
               <li>Website:${practice.website}</li>
               <li>Address:${practice.visit_address.street} ${practice.visit_address.street2}<br>${practice.visit_address.city}, ${practice.visit_address.state}${practice.visit_address.zip}</li>
+              <li>Phone:${practice.phones.number}</li>
               </ul>`);
         })
       })
@@ -57,6 +58,7 @@ $(document).ready(function() {
               <li>Accepting New Patients:${practice.accepts_new_patients}</li>
               <li>Website:${practice.website}</li>
               <li>Address:${practice.visit_address.street} ${practice.visit_address.street2}<br>${practice.visit_address.city}, ${practice.visit_address.state}${practice.visit_address.zip}</li>
+              <li>Phone:${practice.phones.number}</li>
               </ul>`);
         })
       })
