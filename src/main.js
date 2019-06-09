@@ -6,9 +6,12 @@ import $ from 'jquery';
 $(document).ready(function() {
 
   $("#searchSymptom").click(function(event) {
+    $(".listDoctors").empty();
+
     event.preventDefault();
     let symptom = $('#symptom').val();
     $('#symptom').val("");
+
 
     let doctorSearch = new DoctorSearch();
     let promise = doctorSearch.getDoctorListBySymptom(symptom);
@@ -16,7 +19,7 @@ $(document).ready(function() {
     promise.then(function(response) {
       let body = JSON.parse(response);
       if(body.data.length === 0){
-        $(".listDoctors").append(`<li>No doctor's match your search</li>`);
+        $(".listDoctors").html(`<li>No doctor's match your search</li>`);
       }
       body.data.forEach(function(doctor) {
         console.log(`${doctor.profile.first_name}`);
@@ -32,11 +35,13 @@ $(document).ready(function() {
         })
       })
     }, function(error) {
-      $('.showErrors').text('There was an error processing your request: ${error.message}');
+      $('.showErrors').html('There was an error processing your request: ${error.message}');
     });
   });
 
   $("#searchName").click(function(event) {
+    $(".listDoctorsName").empty();
+
     event.preventDefault();
     let name = $('#name').val();
     $('#name').val("");
@@ -47,7 +52,7 @@ $(document).ready(function() {
     promise.then(function(response) {
       let body = JSON.parse(response);
       if(body.data.length === 0){
-        $(".listDoctors").append(`<li>No doctor's match your search</li>`);
+        $(".listDoctorsName").html(`<li>No doctor's match your search</li>`);
       }
       body.data.forEach(function(doctor) {
         console.log(`${doctor.profile.first_name}`);
@@ -63,7 +68,7 @@ $(document).ready(function() {
         })
       })
     }, function(error) {
-      $('.showErrors').text('There was an error processing your request: ${error.message}');
+      $('.showErrors').html('There was an error processing your request: ${error.message}');
     });
   });
 });
