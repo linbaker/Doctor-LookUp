@@ -26,19 +26,19 @@ $(document).ready(function() {
         console.log(`${doctor.profile.first_name}`);
         doctor.practices.forEach(function(practice){
 
-                      let doctorWebsite = "No Website";
-          if (`${practice.website}` != undefined){
-            let doctorWebsite = `${practice.website}`;
-          }
+          // let doctorWebsite = "No Website";
+          // if (`${practice.website}` != undefined){
+          //   let doctorWebsite = `${practice.website}`;
+          // }
 
-          $("#listDoctors").append(`<div class="square">
+          $("#listDoctors").append((`<div class="square">
             <li>Dr. ${doctor.profile.first_name} ${doctor.profile.last_name}</li>
             <ul>
               <li>Accepting New Patients:${practice.accepts_new_patients}</li>
-              <li>Website: ${doctorWebsite} </li>
+              <li>Website: ${practice.website}</li>
               <li>Address:${practice.visit_address.street} ${practice.visit_address.street2}<br>${practice.visit_address.city}, ${practice.visit_address.state}${practice.visit_address.zip}</li>
               <li>Phone:${practice.phones.number}</li>
-              </ul></div>`);
+              </ul></div>`).replace(/undefined/g, "No Information Available"));
         })
       })
     }, function(error) {
