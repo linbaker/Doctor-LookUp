@@ -1,0 +1,12 @@
+.grid {
+  display: grid;
+  gap: 1%;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 3fr));
+  justify-content: center;
+  grid-auto-rows: 500px;
+}
+
+
+  .square {
+    border: solid 2px black;
+  }
