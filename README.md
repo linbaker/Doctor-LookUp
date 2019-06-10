@@ -22,6 +22,11 @@ The scope of this app is limited to 100 miles of Portland,OR as defined by the c
 ## Setup/Installation Requirements
 
 * _Clone Repository_
+* _Visit https://developer.betterdoctor.com/  and navigate to "Get a free API key", create a free account to generate an API key_
+* _Create file in root of project directory called ".env", set apiKey = your generated API key_
+* _Run "$ npm install" in terminal_
+* _Run "$ npm run start" in terminal_
+
 
 
 
@@ -34,10 +39,11 @@ _Please contact me with any questions, ideas or concerns at lindseybaker0@gmail.
 
 ## Technologies Used
 
-_Javascript_
-_MAMP_
-_MySql_
-_phpMyAdmin_
+_Javascript (ECMA6)_
+_Node Package Manager (Webpack, Babel, ESLint)_
+_Bootstrap_
+_JQuery_
+_Popper.js_
 
 
 ### License
